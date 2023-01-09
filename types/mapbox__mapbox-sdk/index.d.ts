@@ -1042,6 +1042,8 @@ declare module '@mapbox/mapbox-sdk/services/map-matching' {
     interface MapMatchingService {
         getMatch(request: MapMatchingRequest): MapiRequest<MapMatchingResponse>;
     }
+    
+    type Ignore = Array<'access'|'oneways'|'restrictions'>;
 
     interface MapMatchingRequest {
         /**
@@ -1055,7 +1057,7 @@ declare module '@mapbox/mapbox-sdk/services/map-matching' {
         /**
          * Specify additional metadata that should be returned.
          */
-        annotations?: DirectionsAnnotation | undefined;
+        annotations?: DirectionsAnnotation[] | undefined;
         /**
          * Format of the returned geometry. (optional, default "polyline")
          */
@@ -1076,6 +1078,11 @@ declare module '@mapbox/mapbox-sdk/services/map-matching' {
          * Whether or not to transparently remove clusters and re-sample traces for improved map matching results. (optional, default false)
          */
         tidy?: boolean | undefined;
+
+        /**
+         * Ignore certain routing restrictions when map matching. You can include several ignore options as a comma-separated list (for example, ignore=access,oneways,restrictions).
+         */
+        ignore?: Ignore | undefined;
     }
 
     interface Point {
