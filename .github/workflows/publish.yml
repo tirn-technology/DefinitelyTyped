@@ -30,9 +30,8 @@ jobs:
                   registry-url: https://npm.pkg.github.com/
             - run: npm install --force
             - run: cd types/mapbox__mapbox-sdk
-            - run: pwd
-            - run: ls -la
-            - run: npm run build
-            - run: npm publish --force
+            - name: Run Tests
+              working-directory: ./app/types/mapbox__mapbox-sdk
+              run: npm run build && npm publish --force
               env:
                   NODE_AUTH_TOKEN: ${{secrets.GITHUB_TOKEN}}
