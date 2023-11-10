@@ -32,6 +32,9 @@ jobs:
             - run: cd types/mapbox__mapbox-sdk
             - name: Run Tests
               working-directory: types/mapbox__mapbox-sdk
+              with:
+                  node-version: 16
+                  registry-url: https://npm.pkg.github.com/
               run: npm run build && npm publish --force
               env:
                   NODE_AUTH_TOKEN: ${{secrets.GITHUB_TOKEN}}
