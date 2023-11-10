@@ -1,6 +1,6 @@
 {
-    "private": true,
-    "name": "definitely-typed",
+    "private": false,
+    "name": "@tirn-technology/definitely-typed",
     "version": "0.0.3",
     "homepage": "https://github.com/DefinitelyTyped/DefinitelyTyped",
     "repository": {
