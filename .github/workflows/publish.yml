@@ -31,7 +31,7 @@ jobs:
             - run: npm install --force
             - run: cd types/mapbox__mapbox-sdk
             - name: Run Tests
-              working-directory: ./app/types/mapbox__mapbox-sdk
+              working-directory: types/mapbox__mapbox-sdk
               run: npm run build && npm publish --force
               env:
                   NODE_AUTH_TOKEN: ${{secrets.GITHUB_TOKEN}}
