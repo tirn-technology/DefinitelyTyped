@@ -1,5 +1,5 @@
 {
-    "name": "@types/mapbox__mapbox-sdk",
+    "name": "@tirn-technology/mapbox__mapbox-sdk",
     "version": "1.0.1",
     "description": "",
     "main": "index.js",
